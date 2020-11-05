@@ -1,0 +1,19 @@
+- name: Configure rsyslog
+  hosts: all
+  remote_user: root
+
+  tasks:
+  - name: ensure rsyslog is installed
+    yum:
+      name: rsyslog
+      state: latest
+  - name: ensure rsyslog is installed
+    service:
+      name: rsyslog
+      state: enabled
+  - name: ensure rsyslog configuration is present
+    lineinfile:
+      path: /etc/rsyslog.conf
+      regexp: '^auth.*,authpriv.* @@hostname'
+      state: present
+      line: '^auth.*,authpriv.* @@hostname'
