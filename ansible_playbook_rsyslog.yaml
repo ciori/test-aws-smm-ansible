@@ -14,6 +14,6 @@
   - name: ensure rsyslog configuration is present
     lineinfile:
       path: /etc/rsyslog.conf
-      regexp: '^auth.*,authpriv.*	@@hostname'
+      regexp: '^auth.*,authpriv.* @@hostname'
       state: present
-      line: '^auth.*,authpriv.*	@@hostname'
+      line: '^auth.*,authpriv.* @@hostname'
