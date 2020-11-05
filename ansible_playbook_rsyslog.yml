@@ -16,4 +16,4 @@
       path: /etc/rsyslog.conf
       regexp: '^auth.*,authpriv.* @@hostname'
       state: present
-      line: '^auth.*,authpriv.* @@hostname'
+      line: 'auth.*,authpriv.* @@hostname'
