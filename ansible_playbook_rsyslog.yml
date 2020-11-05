@@ -10,7 +10,7 @@
   - name: ensure rsyslog is installed
     service:
       name: rsyslog
-      state: enabled
+      state: started
   - name: ensure rsyslog configuration is present
     lineinfile:
       path: /etc/rsyslog.conf
